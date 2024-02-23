@@ -1,0 +1,24 @@
+name: Publish README to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master # Or your default branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Convert README to HTML
+        run: |
+          sudo apt-get install pandoc
+          pandoc README.md -o index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./ # If your index.html is in the root
