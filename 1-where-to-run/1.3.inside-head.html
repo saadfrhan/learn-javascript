@@ -1,0 +1,30 @@
+<!-- This file demonstrates that you can use script tag inside head tag -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script>
+		// This function changes the inner content of the div with id of demo
+		// using DOM API
+		// function can be simply described as reusable piece of code
+		// which can be used anywhere by invoking it like that
+		// myFunction()
+		function myFunction() {
+			document.getElementById("demo").innerHTML = "Paragraph changed.";
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Demo JavaScript in Head</h2>
+
+	<p id="demo">A Paragraph</p>
+	<!-- When the user will click this button,-->
+	<!-- The function name mentioned in the value of onclick attribute -->
+	<!-- will be invoked -->
+	<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+
+</html>
